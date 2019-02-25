@@ -14,41 +14,41 @@ import sys
 inp = int(sys.argv[1]) - 71 if len(sys.argv) > 1 else 0
 
 answerArray = [ # 71. Find the shortest word where some letter occurs 4 times.
-                '/\\b\w*(\w)\w*\\1\w*\\b/i',
+                '"/(?=\\b\w*(\w)(\w*\\1\w*){3}\\b)\w{,6}$/m"',
 
                 # 72. Find the shortest word where each vowel appears at least once.
-                '/\\b\w*(\w)(\w*\\1\w*){2}\\b/i',
+                '',
 
                 # 73. Find the longest word containing exactly 3 vowels.
-                '/^([01])([01]*\\1)*$/',
+                '/(?=\\b(\w*[aieou]\w*){3}\\b)\w{,3}$/m',
 
                 # 74. Find the longest word where the first three letters form a
                 # palindrome with the final three letters.
-                '/(?=\\b\w{6}\\b)\w*cat\w*/i',
+                '',
 
                 # 75. Find the longest word with the longest contiguous block of
                 # one letter.
-                '/(?=\w*bri.*)(?=\w*i?ng)\\b\w{7,9}\\b/i',
+                '/(?=\\b\w*(\w)\w*\\1{3,}\w*\\b)\w*$/m',
 
                 # 76. Find the longest word with the greatest number of a repeated
-                # letter.
-                '/(?!\w*cat.*)\\b\w{6}\\b/i',
+                # letters.
+                '',
 
                 # 77. Find the longest word with the most number of adjacent pairs
                 # of identical letters. Mississippi?
-                '/(?!\w*(\w)\w*\\1\w*)\\b\w+/i',
+                '',
 
                 # 78. Find the longest word where each letter is repeated at least
                 # once.
-                '/(?!.*10011.*)^[01]*$/',
+                '',
 
                 # 79. Find the longest word where each letter is repeated exactly
                 # one time.
-                '/\w*([aeiou])(?!\\1)[aeiou]\w*/i',
+                '',
 
                 # 80. Find the longest word where no letter is repeated more than
                 # once.
-                '/(?![01]*(1.1)[01]*)^[01]*$/'
+                ''
 ]
 
 print(answerArray[inp])
